@@ -1,0 +1,26 @@
+.row-posters {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  /* pad containers for transforms to scale without hiding overflow */
+  padding: 20px;
+}
+
+/* HIDE SCROLLBARS & KEEP FUNCTIONALITY */
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+.row-poster {
+  /* object fit always keeps the aspect ratio */
+  object-fit: contain;
+  width: 100%;
+  max-height: 150px;
+  transition: transform 450ms;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.row-poster:hover {
+  transform: scale(1.08);
+}
