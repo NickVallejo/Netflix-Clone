@@ -1,0 +1,41 @@
+.poster-wrap {
+  position: relative;
+}
+
+.controls {
+  position: absolute;
+  z-index: 500;
+  height: 100%;
+  width: 94.5%;
+  background-color: white;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.288);
+  transition: 0.5s "all";
+  opacity: 0;
+  -webkit-transition: opacity 0.3s;
+  -moz-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+
+.controls .fas {
+  cursor: pointer;
+  display: inline-block;
+  margin: 15px 15px;
+}
+
+.opac-on {
+  opacity: 1;
+}
+
+.display-on {
+  display: block;
+}
+
+.fas {
+  color: white;
+}
+
+.fas:hover {
+  opacity: 0.6;
+}

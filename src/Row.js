@@ -1,43 +1,40 @@
-import React, { useState, useEffect } from "react";
-import axios from "./axios";
-import "./row.css";
+import React, { useState, useEffect, useContext } from "react"
+import ReactDOM from "react-dom"
+import axios from "./axios"
+import "./row.css"
+import Poster from "./Poster"
 
-const baseImgUrl = "https://image.tmdb.org/t/p/original/";
-
-function Row(props) {
-  const [movies, setMovies] = useState([]);
+function Row({ fetchUrl, title, searchResults }) {
+  const [movies, setMovies] = useState([])
+  const [filteredMovies, setFilteredMovies] = useState([])
 
   //A snippet of code which runs based on a specific condition/variable
   useEffect(() => {
     //if [], run once when the row loads and don't run again
 
     async function getData() {
-      const request = await axios.get(props.fetchUrl);
-      setMovies(request.data.results);
+      const request = await axios.get(fetchUrl)
+      setMovies(request.data.results)
     }
 
-    getData();
-  }, [props.fetchUrl]);
+    getData()
+  }, [fetchUrl])
 
-  console.table(props.title, movies);
+  console.log("filtered movies", filteredMovies)
 
   return (
     <div className="row">
-      <h2>{props.title}</h2>
+      <h2 className="row-title">{title}</h2>
 
-      <div className="row-posters">
-        {movies.map((movie) => (
-          <img
-            //key is a native react attribute that allows a single element in a component to re-render
-            key={movie.id}
-            src={baseImgUrl + movie.poster_path}
-            alt={movie.name}
-            className="row-poster"
-          />
-        ))}
+      <div className={searchResults ? "no-overflow-posters" : "row-posters"}>
+        {movies
+          .filter((movie) => movie.poster_path !== null)
+          .map((filteredMovie) => (
+            <Poster movie={filteredMovie} posterResults={searchResults} />
+          ))}
       </div>
     </div>
-  );
+  )
 }
 
-export default Row;
+export default Row

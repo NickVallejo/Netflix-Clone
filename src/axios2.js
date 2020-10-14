@@ -1,9 +1,9 @@
 import axios from "axios"
 
-const instance = axios.create({
-  baseURL: "https://api.themoviedb.org/3",
+const instance2 = axios.create({
+  baseURL: "http://localhost:3005",
 })
 
 //default imports can be renamed upon import
 //eg. instance export can be imported as "axios" in another file
-export default instance
+export default instance2

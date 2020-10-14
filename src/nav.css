@@ -1,0 +1,99 @@
+.nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+  box-sizing: border-box;
+  padding: 0px 35px;
+  transition: 0.3s all;
+  transition-timing-function: ease-in;
+}
+
+.logo {
+  max-width: 75px;
+  object-fit: contain;
+  margin-top: 10px;
+}
+
+.avatar {
+  object-fit: contain;
+  margin: 10px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-black {
+  background-color: #161616;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.fa-search {
+  color: white;
+  margin: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
+  left: 40px;
+}
+
+.icon-right {
+  left: 40px;
+}
+
+.search {
+  width: 0px;
+  height: 0px;
+  border: none;
+  background-color: transparent;
+  transition: 0.3s all;
+}
+
+input[type="text"] {
+  color: white;
+  position: relative;
+  padding-left: 50px;
+}
+
+.search::placeholder {
+  position: relative;
+  color: white;
+  opacity: 0.85;
+  letter-spacing: 1px;
+}
+
+.search-big {
+  border: 1px solid white;
+  background-color: #21212180;
+  width: 300px;
+  height: 30px;
+}
+
+.sugg-wrap {
+  width: 500px;
+  height: 0px;
+  overflow: scroll;
+  position: absolute;
+  background: #161616;
+  right: 0;
+  top: 82px;
+  display: none;
+  transition: 0.5s all;
+}
+
+.sugg-wrap-show {
+  display: block;
+  height: 500px;
+}
+
+.sugg-poster {
+  max-width: 100px;
+}

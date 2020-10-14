@@ -1,3 +1,12 @@
+.row-group {
+  position: relative;
+  top: -250px;
+}
+
+.row {
+  margin-left: 35px;
+}
+
 .row-posters {
   display: flex;
   overflow-y: hidden;
@@ -11,16 +20,79 @@
   display: none;
 }
 
-.row-poster {
-  /* object fit always keeps the aspect ratio */
-  object-fit: contain;
-  width: 100%;
-  max-height: 150px;
-  transition: transform 450ms;
-  margin-right: 10px;
+.poster-wrap {
+  transition: all 450ms;
   cursor: pointer;
+  position: relative;
+  z-index: 20;
+  height: 255px;
 }
 
-.row-poster:hover {
-  transform: scale(1.08);
+/* .poster-wrap:hover img {
+  display: none;
+} */
+
+.poster-hide {
+  display: none;
+}
+
+.poster-video {
+  transition: 0.3s all;
+  width: 0px;
+  height: 0%;
+  -webkit-transition: width 1s, height 1s, margin 1s;
+  -moz-transition: width 1s, height 1s, margin 1s;
+  -ms-transition: width 1s, height 1s, margin 1s;
+  transition: width 1s, height 1s, margin 1s;
+}
+
+.poster-grow {
+  transition: 0.3s all;
+  display: block;
+  position: relative;
+  top: -255px;
+  width: 400px;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.hover-div {
+  position: absolute;
+  height: 255px;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 50;
+}
+
+.image-hide {
+  opacity: 0;
+}
+
+.poster-image {
+  /* object fit always keeps the aspect ratio */
+  cursor: pointer;
+  margin-right: 10px;
+  transition: all 450ms;
+  position: relative;
+  object-fit: contain;
+  max-width: 170px;
+}
+
+.no-overflow-posters {
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin-left: 20px;
+}
+
+.results {
+  margin: 10px;
+}
+
+.search-row {
+  margin-top: 130px;
+}
+
+.row-title {
+  margin-left: 20px;
 }
